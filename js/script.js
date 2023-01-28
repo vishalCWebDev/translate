@@ -12,18 +12,20 @@ const darkMode = document.querySelector(".ball"),
   DarkclassLists =
     "section, .ball, .dark-mode-toggle, .wrapper, .option-box, .translateTo, .translated, .count-box, .mic , .bottom, footer, header, li, .btn, .policy-container, .click-cookies",
   classes = document.querySelectorAll(DarkclassLists);
-  document.querySelector("footer")
-  .innerHTML = `<i class="fa fa-copyright" style="font-size:20px"></i> &nbsp;
+document.querySelector(
+  "footer"
+).innerHTML = `<i class="fa fa-copyright" style="font-size:20px"></i> &nbsp;
   <h4>${new Date().getFullYear()} create by Vishal Chaudhari</h4>.`;
 
- 
 window.addEventListener("load", () => {
   loader.style.display = "none";
   document.querySelector(".wrapper").style.display = "block";
   setTimeout(() => setCookies(), 1 * 1000);
 });
 
-darkMode.addEventListener("click", () => classes.forEach((items) => items.classList.toggle("active")));
+darkMode.addEventListener("click", () =>
+  classes.forEach((items) => items.classList.toggle("active"))
+);
 
 select.forEach((tags, i) => {
   for (const lang of languages) {
@@ -41,20 +43,20 @@ select.forEach((tags, i) => {
 translation[0].addEventListener("input", (e) => {
   const val = e.target.innerHTML.trim();
   val === ""
-      ? icon[4].style.setProperty("--view", "none")
-      : icon[4].style.setProperty("--view", "block");
+    ? icon[4].style.setProperty("--view", "none")
+    : icon[4].style.setProperty("--view", "block");
   if (val.length < 5000) {
     wordCount[0].innerHTML = `${val.length} / 5,000`;
   } else {
     translation[0].setAttribute("contenteditable", "false");
-  } 
+  }
   alertMes.parentNode.style.visibility = "hidden";
 });
 
 // button.addEventListener("click", (e) => {
 //   const data = translation[0].innerText;
 //   if (data !== "") {
-    
+
 //     const setOne = select[0].value;
 //     const setTwo = select[1].value;
 
@@ -80,7 +82,7 @@ translation[0].addEventListener("input", (e) => {
 icon.forEach((icons) => {
   icons.addEventListener("click", (e) => {
     if (e.target.classList.contains("fa-microphone")) {
-      navigator.onLine ? console.log("online"):console.log("off");;
+      navigator.onLine ? console.log("online") : console.log("off");
       speakAndWrite();
     } else if (e.target.classList.contains("fa-copy")) {
       navigator.clipboard.writeText(translation[1].textContent);
@@ -96,7 +98,7 @@ icon.forEach((icons) => {
       }
     } else if ("fa-volume-up") {
       speck(translation[0].textContent);
-    } 
+    }
   });
 });
 
@@ -136,30 +138,37 @@ const speakAndWrite = () => {
   }
 };
 
-window.addEventListener("resize", ()=>{
+window.addEventListener("resize", () => {
   // console.log(window.screen.width, window.screen.height);
-  if(window.innerWidth < 767){
-    button.addEventListener("click", ()=>{
+  if (window.innerWidth < 767) {
+    button.addEventListener("click", () => {
       const box = document.querySelectorAll(".first-box, .second-box");
-      box.forEach((items)=>items.classList.toggle(".active"));
+      box.forEach((items) => items.classList.toggle(".active"));
       translation[1].innerHTML = window.innerWidth;
     });
   }
-})
+});
 
 // window.addEventListener("click", ()=>{
 //   console.log(window.screen.colorDepth);
 // })
 
-
 const setCookies = () => {
+  const cookiesBtn = document.querySelectorAll(".click-cookies");
   const policyCon = document.querySelector(".policy-container");
   policyCon.style.bottom = "0";
-  const userDeviesInfo = [{ platform: navigator.platform,
-  language: navigator.language,
-  browersName: navigator.appName,
-  codeName: navigator.appCodeName,
-  product: navigator.product,
-  deviesScreen: {width:window.screen.width,height:window.screen.height}}];
+  const userDeviesInfo = [
+    {
+      platform: navigator.platform,
+      language: navigator.language,
+      browersName: navigator.appName,
+      codeName: navigator.appCodeName,
+      product: navigator.product,
+      deviesScreen: {
+        width: window.screen.width,
+        height: window.screen.height,
+      },
+    },
+  ];
   document.cookie = `info=${userDeviesInfo}; expires=Thu, 31 Dec 2023 12:00:00 UTC`;
 };

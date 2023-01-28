@@ -20,7 +20,7 @@ document.querySelector(
 window.addEventListener("load", () => {
   loader.style.display = "none";
   document.querySelector(".wrapper").style.display = "block";
-  setTimeout(() => setCookies(), 1 * 1000);
+  // setTimeout(() => setCookies(), 1 * 1000);
 });
 
 darkMode.addEventListener("click", () =>

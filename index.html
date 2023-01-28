@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Translete</title>
+    <link rel="icon" type="image/x-icon" href="./img/languages.png" />
+  </head>
+  <body>
+    <div class="loader-con">
+      <div class="loader"></div>
+    </div>
+    <div class="alert">
+      <span class="warn-mes"></span>
+      <span class="close" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+    </div>
+
+    <header>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>News</li>
+          <li>Translate</li>
+          <li>Writeing</li>
+          <li>article</li>
+          <li>Typing games</li>
+          <li>About me</li>
+        </ul>
+      </nav>
+      <div class="dark-mode-toggle">
+        <i
+          class="fa fa-moon-o"
+          style="color: red; font-size: 15px; margin-left: 1.5px"
+        ></i>
+        <i class="fa fa-sun-o" style="color: red; font-size: 15px"></i>
+        <div class="ball"></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrapper">
+        <div class="option-box">
+          <div class="dropdown">
+            <select></select>
+          </div>
+          <i class="fa exchange-icon fa-exchange" aria-hidden="true"></i>
+          <div class="dropdown">
+            <select></select>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="first-box">
+            <div
+              class="translateTo"
+              contenteditable="true"
+              autocapitalize="off"
+            ></div>
+
+            <div class="icon">
+              <i class="fa mic fa-microphone"></i>
+              <i
+                class="fa vol fa-volume-up"
+                style="font-size: 20px; color: rgb(36, 36, 36)"
+              ></i>
+            </div>
+
+            <div class="count-box"></div>
+          </div>
+          <div class="second-box">
+            <div class="translated"></div>
+            <div class="icon">
+              <i
+                class="fa copy fa-copy"
+                style="
+                  font-size: 18px;
+                  color: rgb(122, 121, 121);
+                  display: none;
+                "
+              >
+              </i>
+              <i
+                class="fa vol fa-volume-up"
+                style="font-size: 20px; color: rgb(36, 36, 36)"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <button class="btn" role="button">translate</button>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+    <div class="policy-container">
+      <div class="imgBox">
+        <div class="imgCon"></div>
+      </div>
+      <div class="policy-text-container">
+        <p>
+          Cookies help us deliver the best experience on our website.By using
+          our website,you agree to the use of cookies.<a href="#"
+            >Find out how we use cookies.</a>
+        </p>
+      </div>
+      <div class="policy-action-btn">
+        <button class="click-cookies">Accept</button>
+        <button class="click-cookies">Not Accept</button>
+      </div>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
